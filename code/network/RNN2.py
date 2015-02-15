@@ -217,7 +217,7 @@ class RecursiveNeuralNetwork(object):
             print "Epoch %s training complete" % j
             print "Random word vec used {0} of the time".format(float(self.rand_word_vec_count / self.word_count))
             
-            import pdb; pdb.set_trace()
+            # import pdb; pdb.set_trace()
             if monitor_training_cost:
                 cost = self.total_cost(training_data)
                 training_cost.append(cost)
@@ -417,7 +417,6 @@ class RecursiveNeuralNetwork(object):
                 results.append((np.argmax(self.feedforward(x)), np.argmax(y)))
             except:
                 continue
-        import pdb; pdb.set_trace()
         return sum(int(x == y) for (x, y) in results) #TODO: DOUBLE CHECK THIS LINE, NOT SURE WHAT ARGMAX DOES IN PREV LINE
 
 class StanfordNLP:
